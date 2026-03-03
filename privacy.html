@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Ballista</title>
+    <meta name="description" content="Privacy Policy for the Ballista portfolio tracking app by Big Yesh LLC.">
+    <style>
+        /* --- Reset & Base --- */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #0A0A0C;
+            --card-bg: #141416;
+            --border: #1E1E22;
+            --text: #E8E8ED;
+            --text-muted: #8E8E93;
+            --accent: #6C63FF;
+            --accent-soft: rgba(108, 99, 255, 0.12);
+            --heading: #FFFFFF;
+            --section-number: #4A4A52;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 12, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+        }
+
+        nav .nav-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 17px;
+            color: var(--heading);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        nav .logo span { color: var(--accent); }
+
+        nav .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav .nav-links a:hover,
+        nav .nav-links a.active { color: var(--heading); }
+
+        /* --- Main Content --- */
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 120px 24px 80px;
+        }
+
+        /* --- Hero Header --- */
+        .page-header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--heading);
+            letter-spacing: -0.8px;
+            margin-bottom: 12px;
+        }
+
+        .page-header .subtitle {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .page-header .subtitle strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* --- Table of Contents --- */
+        .toc {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 48px;
+        }
+
+        .toc h2 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+            columns: 2;
+            column-gap: 32px;
+        }
+
+        .toc li {
+            counter-increment: toc-counter;
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+
+        .toc li a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .toc li a::before {
+            content: counter(toc-counter) ".";
+            color: var(--section-number);
+            font-size: 13px;
+            font-weight: 600;
+            min-width: 22px;
+        }
+
+        .toc li a:hover { color: var(--accent); }
+
+        /* --- Sections --- */
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 80px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--heading);
+            letter-spacing: -0.3px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .section h2 .num {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--section-number);
+            min-width: 24px;
+        }
+
+        .section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--heading);
+            margin: 20px 0 10px;
+        }
+
+        .section p {
+            margin-bottom: 14px;
+            color: var(--text);
+        }
+
+        .section p:last-child { margin-bottom: 0; }
+
+        /* --- Highlighted/Legal Blocks --- */
+        .legal-block {
+            background: var(--card-bg);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 20px 24px;
+            margin: 20px 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        .legal-block.warning {
+            border-left-color: #FF6B6B;
+            background: rgba(255, 107, 107, 0.06);
+        }
+
+        .legal-block.green {
+            border-left-color: #34C759;
+            background: rgba(52, 199, 89, 0.06);
+        }
+
+        .legal-block strong { color: var(--text); }
+
+        /* --- Data Table --- */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 16px;
+            background: var(--card-bg);
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+            vertical-align: top;
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .label {
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        /* --- Lists within sections --- */
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 12px 0 14px;
+        }
+
+        .section ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .section ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.5;
+        }
+
+        /* --- Footer --- */
+        footer {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 32px 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        footer .copyright {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        footer .footer-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        footer .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        footer .footer-links a:hover { color: var(--heading); }
+
+        /* --- Responsive --- */
+        @media (max-width: 600px) {
+            .page-header h1 { font-size: 28px; }
+            .toc ol { columns: 1; }
+            nav .nav-links { gap: 16px; }
+            nav .nav-links a { font-size: 13px; }
+            footer { flex-direction: column; align-items: flex-start; }
+            .data-table { font-size: 13px; }
+            .data-table th, .data-table td { padding: 10px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo"><span>B</span>allista</a>
+        <ul class="nav-links">
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="privacy.html" class="active">Privacy</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main>
+
+    <!-- Header -->
+    <div class="page-header">
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">
+            <strong>Ballista</strong> — a portfolio tracking app by Big Yesh LLC<br>
+            Last updated <strong>March 3, 2026</strong>
+        </p>
+    </div>
+
+    <!-- Intro -->
+    <p style="margin-bottom: 32px; color: var(--text-muted); font-size: 15px;">
+        Big Yesh LLC ("Company," "we," "us," or "our") operates the Ballista mobile application ("App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the App. Please read this policy carefully. By using the App, you agree to the collection and use of information in accordance with this policy.
+    </p>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h2>Contents</h2>
+        <ol>
+            <li><a href="#info-we-collect">Information We Collect</a></li>
+            <li><a href="#how-we-collect">How We Collect Information</a></li>
+            <li><a href="#how-we-use">How We Use Your Information</a></li>
+            <li><a href="#data-storage">Data Storage & Security</a></li>
+            <li><a href="#third-party">Third-Party Services</a></li>
+            <li><a href="#data-sharing">Data Sharing & Disclosure</a></li>
+            <li><a href="#data-retention">Data Retention</a></li>
+            <li><a href="#your-rights">Your Rights & Choices</a></li>
+            <li><a href="#children">Children's Privacy</a></li>
+            <li><a href="#california">California Privacy Rights (CCPA)</a></li>
+            <li><a href="#international">International Data Transfers</a></li>
+            <li><a href="#changes">Changes to This Policy</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ol>
+    </div>
+
+    <!-- 1. Information We Collect -->
+    <div class="section" id="info-we-collect">
+        <h2><span class="num">1.</span> Information We Collect</h2>
+        <p>We collect only the information necessary to provide and improve the App. Here is a breakdown of what we collect:</p>
+
+        <h3>Account Information</h3>
+        <table class="data-table">
+            <tr>
+                <td class="label">Email address</td>
+                <td>Used for account creation, authentication, and communication</td>
+            </tr>
+            <tr>
+                <td class="label">Name</td>
+                <td>If provided during sign-up or via social login (Google, Apple)</td>
+            </tr>
+            <tr>
+                <td class="label">Authentication data</td>
+                <td>Encrypted passwords or OAuth tokens (Google Sign-In, Sign in with Apple)</td>
+            </tr>
+        </table>
+
+        <h3>Financial Data You Provide</h3>
+        <table class="data-table">
+            <tr>
+                <td class="label">Portfolio data</td>
+                <td>Portfolio names, types, and settings you create</td>
+            </tr>
+            <tr>
+                <td class="label">Transaction data</td>
+                <td>Stock, crypto, options, and other transactions you manually enter or import</td>
+            </tr>
+            <tr>
+                <td class="label">Holdings</td>
+                <td>Calculated from your transactions — shares, cost basis, and current values</td>
+            </tr>
+        </table>
+
+        <h3>Brokerage Data (via Plaid)</h3>
+        <table class="data-table">
+            <tr>
+                <td class="label">Account info</td>
+                <td>Brokerage account names and identifiers retrieved through Plaid</td>
+            </tr>
+            <tr>
+                <td class="label">Transaction history</td>
+                <td>Investment transactions imported from your linked brokerage accounts</td>
+            </tr>
+        </table>
+        <div class="legal-block">
+            <strong>Note:</strong> We never receive or store your brokerage login credentials. Plaid handles authentication directly and securely. We only receive the account and transaction data you authorize.
+        </div>
+
+        <h3>Device & Technical Information</h3>
+        <table class="data-table">
+            <tr>
+                <td class="label">Device model & OS</td>
+                <td>Collected only when you voluntarily submit feedback through the App</td>
+            </tr>
+            <tr>
+                <td class="label">App version</td>
+                <td>Included with voluntary feedback submissions</td>
+            </tr>
+        </table>
+
+        <h3>Information We Do NOT Collect</h3>
+        <div class="legal-block green">
+            <strong>We do not collect:</strong> precise location data, contacts, photos, browsing history, advertising identifiers, or any data from other apps on your device. We do not use third-party analytics or tracking SDKs. We do not serve ads.
+        </div>
+    </div>
+
+    <!-- 2. How We Collect Information -->
+    <div class="section" id="how-we-collect">
+        <h2><span class="num">2.</span> How We Collect Information</h2>
+        <p>We collect information through three methods:</p>
+        <ul>
+            <li><strong>Directly from you</strong> — when you create an account, manually enter transactions, create portfolios, submit feedback, or configure settings</li>
+            <li><strong>From third-party services you connect</strong> — when you link a brokerage account through Plaid, we receive authorized account and transaction data</li>
+            <li><strong>Automatically from market data providers</strong> — we fetch publicly available stock and cryptocurrency prices from third-party data sources to display current values in the App. This data is not personal information</li>
+        </ul>
+    </div>
+
+    <!-- 3. How We Use Your Information -->
+    <div class="section" id="how-we-use">
+        <h2><span class="num">3.</span> How We Use Your Information</h2>
+        <p>We use the information we collect for the following purposes:</p>
+        <ul>
+            <li><strong>Provide the App's core functionality</strong> — displaying your portfolios, calculating holdings, showing performance data, and syncing across devices</li>
+            <li><strong>Authenticate your account</strong> — verifying your identity when you sign in</li>
+            <li><strong>Sync your data</strong> — keeping your portfolios and transactions consistent across multiple devices via our cloud service</li>
+            <li><strong>Import brokerage data</strong> — processing transactions from linked brokerage accounts through Plaid</li>
+            <li><strong>Display market data</strong> — fetching current prices and financial data for the securities in your portfolios</li>
+            <li><strong>Respond to your feedback</strong> — if you submit feedback through the App, we use your contact information and device details to respond and address issues</li>
+            <li><strong>Improve the App</strong> — understanding usage patterns to fix bugs and develop new features</li>
+            <li><strong>Communicate with you</strong> — sending account-related notifications such as subscription changes or Terms updates</li>
+        </ul>
+        <div class="legal-block green">
+            <strong>We do not:</strong> sell your data, use your data for advertising, create advertising profiles, share your financial data with data brokers, or use your data for any purpose unrelated to providing and improving the App.
+        </div>
+    </div>
+
+    <!-- 4. Data Storage & Security -->
+    <div class="section" id="data-storage">
+        <h2><span class="num">4.</span> Data Storage & Security</h2>
+
+        <h3>On-Device Storage</h3>
+        <p>Your portfolio and transaction data is stored locally on your device using the iOS Keychain, which provides hardware-level encryption. This data is encrypted at rest, accessible only when your device is unlocked, and is not included in device backups. App preferences and settings are stored separately using standard iOS storage.</p>
+
+        <h3>Cloud Storage</h3>
+        <p>If you create an account, your data is also synced to our cloud database hosted on Supabase, a secure cloud infrastructure provider. Data is encrypted in transit using TLS (HTTPS) and at rest on the server. Access to the database is restricted to authenticated users and limited to their own data through row-level security policies.</p>
+
+        <h3>Authentication Security</h3>
+        <p>Authentication tokens are stored securely in the iOS Keychain. If you sign in with Google or Apple, we use industry-standard OAuth 2.0 protocols. We never store your third-party account passwords.</p>
+
+        <div class="legal-block warning">
+            <strong>No system is 100% secure.</strong> While we use commercially reasonable measures to protect your information, we cannot guarantee absolute security. You are responsible for maintaining the security of your device and account credentials.
+        </div>
+    </div>
+
+    <!-- 5. Third-Party Services -->
+    <div class="section" id="third-party">
+        <h2><span class="num">5.</span> Third-Party Services</h2>
+        <p>The App relies on the following third-party services to function. Each has its own privacy policy governing how they handle data:</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Purpose</th>
+                    <th>Data Shared</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="label">Supabase</td>
+                    <td>Cloud database, authentication, and data sync</td>
+                    <td>Account info, portfolio data, transactions</td>
+                </tr>
+                <tr>
+                    <td class="label">Plaid</td>
+                    <td>Brokerage account linking and transaction import</td>
+                    <td>Brokerage credentials (handled by Plaid directly), account data</td>
+                </tr>
+                <tr>
+                    <td class="label">Finnhub</td>
+                    <td>Stock price data, company profiles, and market information</td>
+                    <td>Stock ticker symbols only (no personal data)</td>
+                </tr>
+                <tr>
+                    <td class="label">CoinGecko</td>
+                    <td>Cryptocurrency price data and charts</td>
+                    <td>Cryptocurrency identifiers only (no personal data)</td>
+                </tr>
+                <tr>
+                    <td class="label">Yahoo Finance</td>
+                    <td>Historical stock chart data</td>
+                    <td>Stock ticker symbols only (no personal data)</td>
+                </tr>
+                <tr>
+                    <td class="label">Apple (App Store)</td>
+                    <td>App distribution, subscription billing, and Sign in with Apple</td>
+                    <td>Purchase and subscription data (handled by Apple)</td>
+                </tr>
+                <tr>
+                    <td class="label">Google</td>
+                    <td>Google Sign-In authentication</td>
+                    <td>OAuth token and basic profile (name, email)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Market data requests (Finnhub, CoinGecko, Yahoo Finance) are routed through our server-side proxy. Your personal information is never sent to these services — only the ticker symbols needed to fetch prices.</p>
+    </div>
+
+    <!-- 6. Data Sharing & Disclosure -->
+    <div class="section" id="data-sharing">
+        <h2><span class="num">6.</span> Data Sharing & Disclosure</h2>
+        <p>We do not sell, rent, or trade your personal information to third parties. We share your information only in the following limited circumstances:</p>
+        <ul>
+            <li><strong>Service providers</strong> — with the third-party services listed above, solely to the extent necessary to operate the App</li>
+            <li><strong>Legal requirements</strong> — if required by law, regulation, legal process, or governmental request</li>
+            <li><strong>Protection of rights</strong> — to enforce our Terms of Service, protect our rights, privacy, safety, or property, or that of our users or the public</li>
+            <li><strong>Business transfers</strong> — in connection with a merger, acquisition, reorganization, or sale of assets, in which case your information may be transferred as part of that transaction. We will notify you of any such change</li>
+        </ul>
+    </div>
+
+    <!-- 7. Data Retention -->
+    <div class="section" id="data-retention">
+        <h2><span class="num">7.</span> Data Retention</h2>
+        <p>We retain your personal information for as long as your account is active or as needed to provide you with the App's services. If you delete your account, we will delete your personal data from our servers, including your portfolios, transactions, holdings, and profile information.</p>
+        <p>Some data may be retained for a limited period after deletion for the following reasons:</p>
+        <ul>
+            <li>To comply with legal obligations (such as tax or financial recordkeeping requirements)</li>
+            <li>To resolve disputes or enforce our agreements</li>
+            <li>In anonymized or aggregated form that cannot identify you, for analytical purposes</li>
+        </ul>
+        <p>Data stored locally on your device via the iOS Keychain is removed when you delete the App from your device.</p>
+    </div>
+
+    <!-- 8. Your Rights & Choices -->
+    <div class="section" id="your-rights">
+        <h2><span class="num">8.</span> Your Rights & Choices</h2>
+        <p>You have the following rights regarding your personal information:</p>
+        <ul>
+            <li><strong>Access</strong> — you can view all of your data directly within the App at any time</li>
+            <li><strong>Correction</strong> — you can edit your transactions, portfolios, and account information through the App</li>
+            <li><strong>Deletion</strong> — you can delete your account at any time through the App's Settings. This will remove your data from our servers</li>
+            <li><strong>Data export</strong> — your transaction data is visible in the App and can be used as your personal record</li>
+            <li><strong>Unlink brokerage accounts</strong> — you can disconnect linked brokerage accounts at any time through the App's Settings, which revokes Plaid's access to your brokerage data</li>
+            <li><strong>Withdraw consent</strong> — you can stop using the App at any time. Deleting the App removes local data; deleting your account removes cloud data</li>
+        </ul>
+        <p>To exercise any of these rights or if you have questions, contact us at <a href="mailto:bigyesh@shatisand.com" style="color: var(--accent); text-decoration: none; font-weight: 500;">bigyesh@shatisand.com</a>.</p>
+    </div>
+
+    <!-- 9. Children's Privacy -->
+    <div class="section" id="children">
+        <h2><span class="num">9.</span> Children's Privacy</h2>
+        <p>The App is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information without your consent, please contact us at <a href="mailto:bigyesh@shatisand.com" style="color: var(--accent); text-decoration: none;">bigyesh@shatisand.com</a> and we will take steps to delete such information.</p>
+        <p>Users between the ages of 13 and 18 may use the App only with the consent and supervision of a parent or legal guardian.</p>
+    </div>
+
+    <!-- 10. California Privacy Rights (CCPA) -->
+    <div class="section" id="california">
+        <h2><span class="num">10.</span> California Privacy Rights (CCPA)</h2>
+        <p>If you are a California resident, the California Consumer Privacy Act (CCPA) provides you with additional rights regarding your personal information:</p>
+        <ul>
+            <li><strong>Right to know</strong> — you may request that we disclose what personal information we have collected, used, disclosed, and sold about you in the past 12 months</li>
+            <li><strong>Right to delete</strong> — you may request that we delete the personal information we have collected from you, subject to certain exceptions</li>
+            <li><strong>Right to opt out of sale</strong> — we do not sell your personal information and have not done so in the preceding 12 months</li>
+            <li><strong>Right to non-discrimination</strong> — we will not discriminate against you for exercising any of your CCPA rights</li>
+        </ul>
+        <p>To exercise these rights, contact us at <a href="mailto:bigyesh@shatisand.com" style="color: var(--accent); text-decoration: none;">bigyesh@shatisand.com</a>. We will respond to verifiable consumer requests within 45 days.</p>
+    </div>
+
+    <!-- 11. International Data Transfers -->
+    <div class="section" id="international">
+        <h2><span class="num">11.</span> International Data Transfers</h2>
+        <p>The App is operated from the United States. If you access the App from outside the United States, please be aware that your information may be transferred to, stored, and processed in the United States, where our servers and database are located. Data protection laws in the United States may differ from those of your country of residence.</p>
+        <p>By using the App, you consent to the transfer of your information to the United States and the processing of your information in accordance with this Privacy Policy.</p>
+    </div>
+
+    <!-- 12. Changes to This Policy -->
+    <div class="section" id="changes">
+        <h2><span class="num">12.</span> Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. When we make changes, we will update the "Last updated" date at the top of this page. If we make material changes, we will notify you through the App or via the email address associated with your account.</p>
+        <p>We encourage you to review this Privacy Policy periodically. Your continued use of the App after any changes constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <!-- 13. Contact Us -->
+    <div class="section" id="contact">
+        <h2><span class="num">13.</span> Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
+        <div class="legal-block">
+            <strong>Big Yesh LLC</strong><br>
+            Email: <a href="mailto:bigyesh@shatisand.com" style="color: var(--accent); text-decoration: none;">bigyesh@shatisand.com</a>
+        </div>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="copyright">&copy; 2026 Big Yesh LLC. All rights reserved.</div>
+    <ul class="footer-links">
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+</footer>
+
+</body>
+</html>

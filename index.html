@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballista — Legal</title>
+    <meta name="description" content="Legal documents for the Ballista portfolio tracking app by Big Yesh LLC.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #0A0A0C;
+            --card-bg: #141416;
+            --border: #1E1E22;
+            --text: #E8E8ED;
+            --text-muted: #8E8E93;
+            --accent: #6C63FF;
+            --heading: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 24px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--heading);
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .tagline {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 48px;
+            line-height: 1.5;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px 28px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: border-color 0.2s, transform 0.15s;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .card-content { text-align: left; }
+
+        .card-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--heading);
+            margin-bottom: 4px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .card-arrow {
+            color: var(--text-muted);
+            font-size: 20px;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .card:hover .card-arrow {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .footer-text a {
+            color: var(--text);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo"><span>B</span>allista</div>
+        <p class="tagline">Track your portfolio. Your way.</p>
+
+        <div class="cards">
+            <a href="terms.html" class="card">
+                <div class="card-content">
+                    <div class="card-title">Terms of Service</div>
+                    <div class="card-desc">Rules for using Ballista</div>
+                </div>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="privacy.html" class="card">
+                <div class="card-content">
+                    <div class="card-title">Privacy Policy</div>
+                    <div class="card-desc">How we handle your data</div>
+                </div>
+                <span class="card-arrow">→</span>
+            </a>
+        </div>
+
+        <p class="footer-text">&copy; 2026 <a href="mailto:bigyesh@shatisand.com">Big Yesh LLC</a>. All rights reserved.</p>
+    </div>
+</body>
+</html>

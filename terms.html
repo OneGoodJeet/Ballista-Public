@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Ballista</title>
+    <meta name="description" content="Terms of Service for the Ballista portfolio tracking app by Big Yesh LLC.">
+    <style>
+        /* --- Reset & Base --- */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #0A0A0C;
+            --card-bg: #141416;
+            --border: #1E1E22;
+            --text: #E8E8ED;
+            --text-muted: #8E8E93;
+            --accent: #6C63FF;
+            --accent-soft: rgba(108, 99, 255, 0.12);
+            --heading: #FFFFFF;
+            --section-number: #4A4A52;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 12, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+        }
+
+        nav .nav-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 17px;
+            color: var(--heading);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        nav .logo span { color: var(--accent); }
+
+        nav .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav .nav-links a:hover,
+        nav .nav-links a.active { color: var(--heading); }
+
+        /* --- Main Content --- */
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 120px 24px 80px;
+        }
+
+        /* --- Hero Header --- */
+        .page-header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--heading);
+            letter-spacing: -0.8px;
+            margin-bottom: 12px;
+        }
+
+        .page-header .subtitle {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .page-header .subtitle strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* --- Table of Contents --- */
+        .toc {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 48px;
+        }
+
+        .toc h2 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+            columns: 2;
+            column-gap: 32px;
+        }
+
+        .toc li {
+            counter-increment: toc-counter;
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+
+        .toc li a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .toc li a::before {
+            content: counter(toc-counter) ".";
+            color: var(--section-number);
+            font-size: 13px;
+            font-weight: 600;
+            min-width: 22px;
+        }
+
+        .toc li a:hover { color: var(--accent); }
+
+        /* --- Sections --- */
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 80px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--heading);
+            letter-spacing: -0.3px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .section h2 .num {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--section-number);
+            min-width: 24px;
+        }
+
+        .section p {
+            margin-bottom: 14px;
+            color: var(--text);
+        }
+
+        .section p:last-child { margin-bottom: 0; }
+
+        /* --- Highlighted/Legal Blocks --- */
+        .legal-block {
+            background: var(--card-bg);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 20px 24px;
+            margin: 20px 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        .legal-block.warning {
+            border-left-color: #FF6B6B;
+            background: rgba(255, 107, 107, 0.06);
+        }
+
+        .legal-block strong { color: var(--text); }
+
+        /* --- Uppercase Legal Text --- */
+        .caps-block {
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        /* --- Lists within sections --- */
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 12px 0 14px;
+        }
+
+        .section ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .section ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.5;
+        }
+
+        /* --- Footer --- */
+        footer {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 32px 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        footer .copyright {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        footer .footer-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        footer .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        footer .footer-links a:hover { color: var(--heading); }
+
+        /* --- Responsive --- */
+        @media (max-width: 600px) {
+            .page-header h1 { font-size: 28px; }
+            .toc ol { columns: 1; }
+            nav .nav-links { gap: 16px; }
+            nav .nav-links a { font-size: 13px; }
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo"><span>B</span>allista</a>
+        <ul class="nav-links">
+            <li><a href="terms.html" class="active">Terms</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main>
+
+    <!-- Header -->
+    <div class="page-header">
+        <h1>Terms of Service</h1>
+        <p class="subtitle">
+            <strong>Ballista</strong> — a portfolio tracking app by Big Yesh LLC<br>
+            Last updated <strong>March 3, 2026</strong>
+        </p>
+    </div>
+
+    <!-- Intro -->
+    <p style="margin-bottom: 32px; color: var(--text-muted); font-size: 15px;">
+        Please read these Terms of Service ("Terms") carefully before using the Ballista mobile application ("App") operated by Big Yesh LLC ("Company," "we," "us," or "our"), a limited liability company registered in the State of Arizona, United States. By downloading, installing, accessing, or using the App, you agree to be bound by these Terms. If you do not agree, do not use the App.
+    </p>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h2>Contents</h2>
+        <ol>
+            <li><a href="#eligibility">Eligibility</a></li>
+            <li><a href="#service">Description of Service</a></li>
+            <li><a href="#accounts">Account Registration & Security</a></li>
+            <li><a href="#subscriptions">Subscriptions & Payments</a></li>
+            <li><a href="#user-data">User Data & Financial Information</a></li>
+            <li><a href="#third-party">Third-Party Services</a></li>
+            <li><a href="#acceptable-use">Acceptable Use</a></li>
+            <li><a href="#ip">Intellectual Property</a></li>
+            <li><a href="#disclaimers">Disclaimer of Warranties</a></li>
+            <li><a href="#liability">Limitation of Liability</a></li>
+            <li><a href="#indemnification">Indemnification</a></li>
+            <li><a href="#arbitration">Dispute Resolution & Arbitration</a></li>
+            <li><a href="#class-action">Class Action Waiver</a></li>
+            <li><a href="#governing-law">Governing Law</a></li>
+            <li><a href="#termination">Account Termination & Deletion</a></li>
+            <li><a href="#modifications">Modifications</a></li>
+            <li><a href="#privacy">Privacy</a></li>
+            <li><a href="#apple">Apple App Store Terms</a></li>
+            <li><a href="#severability">Severability</a></li>
+            <li><a href="#entire-agreement">Entire Agreement</a></li>
+            <li><a href="#waiver">Waiver</a></li>
+            <li><a href="#contact">Contact Information</a></li>
+        </ol>
+    </div>
+
+    <!-- 1. Eligibility -->
+    <div class="section" id="eligibility">
+        <h2><span class="num">1.</span> Eligibility</h2>
+        <p>You must be at least 13 years of age to use the App. If you are between the ages of 13 and 18, you may only use the App with the consent and supervision of a parent or legal guardian who agrees to be bound by these Terms on your behalf. By using the App, you represent and warrant that you meet these eligibility requirements.</p>
+    </div>
+
+    <!-- 2. Description of Service -->
+    <div class="section" id="service">
+        <h2><span class="num">2.</span> Description of Service</h2>
+        <p>Ballista is a personal portfolio tracking application that allows users to monitor their stock, cryptocurrency, and other investment holdings. The App provides tools for tracking transactions, viewing analytics, and organizing financial data across multiple portfolios.</p>
+        <div class="legal-block">
+            <strong>Important:</strong> The App is a tracking and organizational tool only. Ballista does not provide financial advice, investment recommendations, brokerage services, or execute trades on your behalf. The App does not hold, custody, or manage any of your funds or securities.
+        </div>
+    </div>
+
+    <!-- 3. Account Registration -->
+    <div class="section" id="accounts">
+        <h2><span class="num">3.</span> Account Registration & Security</h2>
+        <p>To access certain features of the App, you must create an account. You agree to provide accurate, current, and complete information during registration, and to update such information to keep it accurate, current, and complete.</p>
+        <p>You are responsible for safeguarding the password associated with your account and for all activities that occur under your account. You agree to notify us immediately of any unauthorized access to or use of your account.</p>
+        <p>We reserve the right to suspend or terminate your account if any information provided proves to be inaccurate, not current, or incomplete, or if we reasonably believe your account has been compromised.</p>
+    </div>
+
+    <!-- 4. Subscriptions -->
+    <div class="section" id="subscriptions">
+        <h2><span class="num">4.</span> Subscriptions & Payments</h2>
+        <p>Ballista offers both free and premium features. Premium features are available through paid subscription plans, offered on both a monthly and annual billing cycle.</p>
+        <p>By purchasing a subscription, you agree to pay the applicable fees as displayed in the App at the time of purchase. Subscriptions are billed in advance on a recurring basis through Apple's App Store and are subject to Apple's terms and policies.</p>
+        <p>Subscriptions automatically renew unless auto-renewal is turned off at least 24 hours before the end of the current billing period. You may manage your subscription and turn off auto-renewal by going to your device's Account Settings after purchase. The renewal charge will be applied within 24 hours prior to the end of the current period.</p>
+        <p>We reserve the right to change subscription pricing at any time. Price changes will take effect at the start of the next billing cycle following notice to you. Your continued use of the paid features after a price change constitutes your agreement to the new price.</p>
+        <p>Refunds are handled in accordance with Apple's App Store refund policies. We do not process refunds directly.</p>
+    </div>
+
+    <!-- 5. User Data -->
+    <div class="section" id="user-data">
+        <h2><span class="num">5.</span> User Data & Financial Information</h2>
+        <p>You may input, upload, or connect financial data to the App, including portfolio holdings, transactions, account balances, and brokerage account information via third-party services such as Plaid. You retain full ownership of all data you provide to the App.</p>
+        <p>You acknowledge and agree that the financial data displayed in the App — including portfolio values, price data, gains, losses, and performance metrics — is for informational and personal tracking purposes only. Data may be delayed, inaccurate, or incomplete. We do not guarantee the accuracy, timeliness, or completeness of any financial data or market information displayed.</p>
+        <div class="legal-block warning">
+            <strong>Risk notice:</strong> We are not responsible for any decisions you make based on information presented in the App. You are solely responsible for verifying the accuracy of your financial data and for any investment decisions you make.
+        </div>
+    </div>
+
+    <!-- 6. Third-Party Services -->
+    <div class="section" id="third-party">
+        <h2><span class="num">6.</span> Third-Party Services</h2>
+        <p>The App may integrate with or rely on third-party services, including but not limited to Plaid (for brokerage account linking), market data providers, and authentication services. Your use of these third-party services is subject to their respective terms of service and privacy policies.</p>
+        <p>We are not responsible for the availability, accuracy, or functionality of any third-party service, and we make no warranties regarding them.</p>
+        <p>If you choose to link a brokerage account through Plaid, you authorize Plaid to access your brokerage account information on your behalf. You acknowledge that this connection is governed by Plaid's own terms of service and privacy policy in addition to these Terms.</p>
+    </div>
+
+    <!-- 7. Acceptable Use -->
+    <div class="section" id="acceptable-use">
+        <h2><span class="num">7.</span> Acceptable Use</h2>
+        <p>You agree not to use the App to:</p>
+        <ul>
+            <li>Violate any applicable local, state, national, or international law or regulation</li>
+            <li>Upload, transmit, or distribute any viruses, malware, or other harmful code</li>
+            <li>Attempt to gain unauthorized access to the App, other user accounts, or any related systems or networks</li>
+            <li>Interfere with or disrupt the integrity or performance of the App or its related systems</li>
+            <li>Reverse-engineer, decompile, disassemble, or otherwise attempt to discover the source code of the App</li>
+            <li>Use the App for any commercial purpose not expressly permitted by these Terms</li>
+            <li>Scrape, crawl, or use automated means to access the App or extract data</li>
+            <li>Impersonate any person or entity, or falsely state or misrepresent your affiliation with any person or entity</li>
+            <li>Use the App in a manner that could damage, disable, overburden, or impair our servers or networks</li>
+        </ul>
+        <p>We reserve the right to suspend or terminate your access to the App, without notice, for any conduct that we determine, in our sole discretion, violates these Terms or is harmful to other users, us, or third parties.</p>
+    </div>
+
+    <!-- 8. Intellectual Property -->
+    <div class="section" id="ip">
+        <h2><span class="num">8.</span> Intellectual Property</h2>
+        <p>The App and its entire contents, features, and functionality — including all software, code, design, text, graphics, logos, icons, and images — are owned by Big Yesh LLC and are protected by United States and international copyright, trademark, and other intellectual property laws.</p>
+        <p>You are granted a limited, non-exclusive, non-transferable, revocable license to use the App for your personal, non-commercial use, subject to these Terms. This license does not include the right to modify, distribute, sell, lease, or create derivative works from the App.</p>
+    </div>
+
+    <!-- 9. Disclaimer of Warranties -->
+    <div class="section" id="disclaimers">
+        <h2><span class="num">9.</span> Disclaimer of Warranties</h2>
+        <div class="caps-block">
+            <p>The App is provided on an "as is" and "as available" basis, without warranties of any kind, either express or implied. To the fullest extent permitted by applicable law, we disclaim all warranties, express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+            <p style="margin-top: 14px;">We do not warrant that the App will be uninterrupted, secure, error-free, or free of viruses or other harmful components. We do not warrant the accuracy, reliability, or completeness of any information, data, or content provided through the App, including market data, price information, portfolio valuations, or performance calculations.</p>
+            <p style="margin-top: 14px;">You acknowledge that investment tracking involves inherent risks and that the App is not a substitute for professional financial advice. Any reliance you place on information provided through the App is strictly at your own risk.</p>
+        </div>
+    </div>
+
+    <!-- 10. Limitation of Liability -->
+    <div class="section" id="liability">
+        <h2><span class="num">10.</span> Limitation of Liability</h2>
+        <div class="caps-block">
+            <p>To the maximum extent permitted by applicable law, in no event shall Big Yesh LLC, its officers, directors, members, employees, agents, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, loss of data, loss of goodwill, or other intangible losses, arising out of or in connection with your use of or inability to use the App, regardless of the theory of liability.</p>
+            <p style="margin-top: 14px;">In no event shall our total aggregate liability to you for all claims arising out of or relating to these Terms or your use of the App exceed the greater of (a) the amounts you have paid to us in the twelve (12) months immediately preceding the event giving rise to the claim, or (b) fifty dollars ($50.00).</p>
+            <p style="margin-top: 14px;">We shall not be liable for any financial losses, investment losses, or damages resulting from your reliance on data, calculations, or information displayed in the App, including but not limited to inaccurate portfolio valuations, incorrect gain or loss calculations, delayed market data, or errors in transaction records.</p>
+        </div>
+    </div>
+
+    <!-- 11. Indemnification -->
+    <div class="section" id="indemnification">
+        <h2><span class="num">11.</span> Indemnification</h2>
+        <p>You agree to defend, indemnify, and hold harmless Big Yesh LLC and its officers, directors, members, employees, agents, and affiliates from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from: (a) your use of the App; (b) your violation of these Terms; (c) your violation of any third-party right, including any intellectual property or privacy right; or (d) any content or data you provide through the App.</p>
+    </div>
+
+    <!-- 12. Arbitration -->
+    <div class="section" id="arbitration">
+        <h2><span class="num">12.</span> Dispute Resolution & Binding Arbitration</h2>
+        <div class="legal-block warning">
+            <strong>Please read this section carefully.</strong> It affects your legal rights, including your right to file a lawsuit in court.
+        </div>
+        <p>You and Big Yesh LLC agree that any dispute, claim, or controversy arising out of or relating to these Terms or the use of the App shall be resolved through binding individual arbitration, rather than in court, except that either party may bring an individual action in small claims court if the claim qualifies.</p>
+        <p>Arbitration shall be administered by the American Arbitration Association ("AAA") under its Consumer Arbitration Rules then in effect. The arbitration shall take place in Maricopa County, Arizona, or at another mutually agreed-upon location. The arbitrator's decision shall be final and binding and may be entered as a judgment in any court of competent jurisdiction.</p>
+        <p>You agree that any arbitration shall be conducted on an individual basis and not as a class, consolidated, or representative action. If for any reason a claim proceeds in court rather than in arbitration, you and we each waive any right to a jury trial.</p>
+        <p>The arbitrator may award the same relief that a court could award, including injunctive or declaratory relief, but only to the extent required to satisfy your individual claim.</p>
+        <p>If you wish to opt out of this arbitration agreement, you must send written notice to <strong>bigyesh@shatisand.com</strong> within 30 days of first accepting these Terms. Your notice must include your name, mailing address, and a clear statement that you wish to opt out.</p>
+    </div>
+
+    <!-- 13. Class Action Waiver -->
+    <div class="section" id="class-action">
+        <h2><span class="num">13.</span> Class Action Waiver</h2>
+        <div class="caps-block">
+            <p>You and Big Yesh LLC agree that each may bring claims against the other only in your or its individual capacity, and not as a plaintiff or class member in any purported class, consolidated, or representative proceeding. Unless both you and we agree otherwise, the arbitrator may not consolidate or join more than one person's claims and may not otherwise preside over any form of a consolidated, representative, or class proceeding.</p>
+        </div>
+    </div>
+
+    <!-- 14. Governing Law -->
+    <div class="section" id="governing-law">
+        <h2><span class="num">14.</span> Governing Law</h2>
+        <p>These Terms and any disputes arising out of or related to these Terms or the App shall be governed by and construed in accordance with the laws of the State of Arizona, United States, without regard to its conflict of law provisions. To the extent that litigation is permitted under these Terms, you consent to the exclusive jurisdiction and venue of the state and federal courts located in Maricopa County, Arizona.</p>
+    </div>
+
+    <!-- 15. Account Termination -->
+    <div class="section" id="termination">
+        <h2><span class="num">15.</span> Account Termination & Deletion</h2>
+        <p>You may delete your account at any time through the App's settings. Upon account deletion, we will delete your personal data in accordance with our Privacy Policy. Some data may be retained as required by law or for legitimate business purposes.</p>
+        <p>We reserve the right to suspend or terminate your account at any time, with or without cause, and with or without notice. Upon termination, your right to use the App will immediately cease. Any provisions of these Terms that by their nature should survive termination shall survive, including but not limited to ownership provisions, warranty disclaimers, indemnification, limitation of liability, and dispute resolution.</p>
+    </div>
+
+    <!-- 16. Modifications -->
+    <div class="section" id="modifications">
+        <h2><span class="num">16.</span> Modifications</h2>
+        <p>We reserve the right to modify, suspend, or discontinue the App or any part thereof, at any time, with or without notice. We shall not be liable to you or any third party for any modification, suspension, or discontinuation of the App.</p>
+        <p>We may revise these Terms from time to time. The most current version will always be posted within the App or on our website. If a revision is material, we will notify you through the App or via the email address associated with your account. By continuing to access or use the App after revisions become effective, you agree to be bound by the revised Terms. If you do not agree to the new Terms, you must stop using the App.</p>
+    </div>
+
+    <!-- 17. Privacy -->
+    <div class="section" id="privacy">
+        <h2><span class="num">17.</span> Privacy</h2>
+        <p>Your use of the App is also governed by our <a href="privacy.html" style="color: var(--accent); text-decoration: none; font-weight: 500;">Privacy Policy</a>, which is incorporated into these Terms by reference. Please review our Privacy Policy to understand our practices regarding the collection, use, and disclosure of your personal information.</p>
+    </div>
+
+    <!-- 18. Apple App Store Terms -->
+    <div class="section" id="apple">
+        <h2><span class="num">18.</span> Apple App Store Terms</h2>
+        <p>The following terms apply to your use of the App as downloaded from the Apple App Store:</p>
+        <ul>
+            <li>These Terms are between you and Big Yesh LLC only, and not with Apple</li>
+            <li>Apple has no obligation to provide maintenance or support for the App</li>
+            <li>In the event of any failure of the App to conform to any applicable warranty, you may notify Apple for a refund of the purchase price (if any), and Apple shall have no other warranty obligation</li>
+            <li>Apple is not responsible for addressing any claims relating to the App</li>
+            <li>In the event of any third-party claim that the App infringes a third party's intellectual property rights, Big Yesh LLC, not Apple, shall be solely responsible for the investigation, defense, settlement, and discharge of any such claim</li>
+            <li>Apple and its subsidiaries are third-party beneficiaries of these Terms, and upon your acceptance, Apple will have the right to enforce these Terms against you</li>
+            <li>You represent and warrant that you are not located in a country subject to a U.S. Government embargo or designated as a "terrorist supporting" country, and you are not listed on any U.S. Government list of prohibited or restricted parties</li>
+        </ul>
+    </div>
+
+    <!-- 19. Severability -->
+    <div class="section" id="severability">
+        <h2><span class="num">19.</span> Severability</h2>
+        <p>If any provision of these Terms is held to be unenforceable or invalid by a court of competent jurisdiction, such provision shall be modified to the minimum extent necessary to make it enforceable, and the remaining provisions shall remain in full force and effect.</p>
+    </div>
+
+    <!-- 20. Entire Agreement -->
+    <div class="section" id="entire-agreement">
+        <h2><span class="num">20.</span> Entire Agreement</h2>
+        <p>These Terms, together with our Privacy Policy and any other legal notices or policies published by us on the App, constitute the entire agreement between you and Big Yesh LLC regarding the use of the App and supersede all prior or contemporaneous agreements, communications, and proposals, whether oral or written.</p>
+    </div>
+
+    <!-- 21. Waiver -->
+    <div class="section" id="waiver">
+        <h2><span class="num">21.</span> Waiver</h2>
+        <p>No waiver of any term or condition of these Terms shall be deemed a further or continuing waiver of such term or any other term. Our failure to assert any right or provision under these Terms shall not constitute a waiver of such right or provision.</p>
+    </div>
+
+    <!-- 22. Contact -->
+    <div class="section" id="contact">
+        <h2><span class="num">22.</span> Contact Information</h2>
+        <p>If you have any questions about these Terms, please contact us at:</p>
+        <div class="legal-block">
+            <strong>Big Yesh LLC</strong><br>
+            Email: <a href="mailto:bigyesh@shatisand.com" style="color: var(--accent); text-decoration: none;">bigyesh@shatisand.com</a>
+        </div>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="copyright">&copy; 2026 Big Yesh LLC. All rights reserved.</div>
+    <ul class="footer-links">
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+</footer>
+
+</body>
+</html>

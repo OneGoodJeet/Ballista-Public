@@ -442,26 +442,54 @@
         <table class="data-table">
             <tr>
                 <td class="label">Device model & OS</td>
-                <td>Collected only when you voluntarily submit feedback through the App</td>
+                <td>Collected automatically for analytics and when you submit feedback</td>
             </tr>
             <tr>
-                <td class="label">App version</td>
-                <td>Included with voluntary feedback submissions</td>
+                <td class="label">App version & build</td>
+                <td>Collected automatically for analytics, crash diagnostics, and feedback</td>
+            </tr>
+            <tr>
+                <td class="label">Screen size & locale</td>
+                <td>Collected automatically to understand device diversity and optimize the App</td>
             </tr>
         </table>
 
+        <h3>Usage & Analytics Data</h3>
+        <table class="data-table">
+            <tr>
+                <td class="label">Feature usage</td>
+                <td>Which features and screens you use, and how frequently</td>
+            </tr>
+            <tr>
+                <td class="label">Session data</td>
+                <td>How often you open the App and approximate session duration</td>
+            </tr>
+            <tr>
+                <td class="label">Aggregate portfolio stats</td>
+                <td>Anonymized trends such as average portfolio size, popular holdings, and asset allocation patterns — used to understand our user base and improve the App</td>
+            </tr>
+            <tr>
+                <td class="label">Crash & error reports</td>
+                <td>Technical error data to help us identify and fix bugs</td>
+            </tr>
+        </table>
+        <div class="legal-block">
+            <strong>Note:</strong> Analytics data is collected through PostHog, a privacy-focused analytics platform. We do not use this data to build advertising profiles or target ads. Analytics data is used solely to understand how the App is used and to improve it.
+        </div>
+
         <h3>Information We Do NOT Collect</h3>
         <div class="legal-block green">
-            <strong>We do not collect:</strong> precise location data, contacts, photos, browsing history, advertising identifiers, or any data from other apps on your device. We do not use third-party analytics or tracking SDKs. We do not serve ads.
+            <strong>We do not collect:</strong> precise location data, contacts, photos, browsing history, advertising identifiers, or any data from other apps on your device. We do not serve ads or sell your data.
         </div>
     </div>
 
     <!-- 2. How We Collect Information -->
     <div class="section" id="how-we-collect">
         <h2><span class="num">2.</span> How We Collect Information</h2>
-        <p>We collect information through three methods:</p>
+        <p>We collect information through four methods:</p>
         <ul>
             <li><strong>Directly from you</strong> — when you create an account, manually enter transactions, create portfolios, submit feedback, or configure settings</li>
+            <li><strong>Automatically through analytics</strong> — when you use the App, we automatically collect device information, usage patterns, and performance data through our analytics service (PostHog)</li>
             <li><strong>From third-party services you connect</strong> — when you link a brokerage account through Plaid, we receive authorized account and transaction data</li>
             <li><strong>Automatically from market data providers</strong> — we fetch publicly available stock and cryptocurrency prices from third-party data sources to display current values in the App. This data is not personal information</li>
         </ul>
@@ -478,7 +506,8 @@
             <li><strong>Import brokerage data</strong> — processing transactions from linked brokerage accounts through Plaid</li>
             <li><strong>Display market data</strong> — fetching current prices and financial data for the securities in your portfolios</li>
             <li><strong>Respond to your feedback</strong> — if you submit feedback through the App, we use your contact information and device details to respond and address issues</li>
-            <li><strong>Improve the App</strong> — understanding usage patterns to fix bugs and develop new features</li>
+            <li><strong>Analyze usage and improve the App</strong> — understanding which features are used, how often, and by what types of devices so we can fix bugs, optimize performance, and build better features</li>
+            <li><strong>Understand our user base</strong> — analyzing anonymized, aggregated portfolio trends (such as average portfolio size and popular asset categories) to inform product decisions</li>
             <li><strong>Communicate with you</strong> — sending account-related notifications such as subscription changes or Terms updates</li>
         </ul>
         <div class="legal-block green">
@@ -544,6 +573,11 @@
                     <td>Stock ticker symbols only (no personal data)</td>
                 </tr>
                 <tr>
+                    <td class="label">PostHog</td>
+                    <td>Product analytics, usage tracking, and crash diagnostics</td>
+                    <td>Device info, feature usage, session data, anonymized portfolio trends</td>
+                </tr>
+                <tr>
                     <td class="label">Apple (App Store)</td>
                     <td>App distribution, subscription billing, and Sign in with Apple</td>
                     <td>Purchase and subscription data (handled by Apple)</td>
@@ -594,6 +628,7 @@
             <li><strong>Deletion</strong> — you can delete your account at any time through the App's Settings. This will remove your data from our servers</li>
             <li><strong>Data export</strong> — your transaction data is visible in the App and can be used as your personal record</li>
             <li><strong>Unlink brokerage accounts</strong> — you can disconnect linked brokerage accounts at any time through the App's Settings, which revokes Plaid's access to your brokerage data</li>
+            <li><strong>Opt out of analytics</strong> — you can contact us to request that analytics tracking be disabled for your account</li>
             <li><strong>Withdraw consent</strong> — you can stop using the App at any time. Deleting the App removes local data; deleting your account removes cloud data</li>
         </ul>
         <p>To exercise any of these rights or if you have questions, contact us at <a href="mailto:bigyesh@shatisand.com" style="color: var(--accent); text-decoration: none; font-weight: 500;">bigyesh@shatisand.com</a>.</p>
